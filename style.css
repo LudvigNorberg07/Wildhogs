@@ -1,6 +1,6 @@
 :root{
   --size:200px;
-  --fontweight: 400;
+  --fontweight: 200;
 }
 
 .metal-mania-regular {
@@ -33,87 +33,109 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --outline:2px dotted orange;
 }
 body{
   display:flex;
   flex-direction: column;
-  height:100dvh;
-  background: #000;
+  height:100%;
   overflow-x:hidden;
+  background: url(https://images.pexels.com/photos/3705687/pexels-photo-3705687.jpeg);
+  background-size: cover;
+  overflow-y: hidden;
 }
-h1{
+header{
   height:calc(var(--size) * 0.5);
   width:100%;
-  background: url(https://previews.123rf.com/images/munktcu/munktcu1302/munktcu130200048/17729066-old-rusted-steel-or-metal-plating-for-background.avif);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .9)),
+    url(Kockar_och_biker_2.jpg);
+  background-position: center;
   display:grid;
   place-content: center;
   font-family: "Metal Mania", system-ui;
   font-weight: var(--fontweight);
   font-style: normal;
-  font-size:5rem;
-  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000;
+  font-size:calc(var(--size) * .5); 
+  text-shadow: calc(var(--size)/100) 0 #000, calc(var(--size)/-100) 0 #000, 0 calc(var(--size)/100) #000, 0 calc(var(--size)/-100) #000;
   color: #fd8317;
 }
 nav{
   height:calc(var(--size)*0.2);
-  background: #000;
+  background:#000;
   display:flex;
   flex-direction:row;
   align-items:center;
-  gap:2rem;
-  margin-left:2rem;
+  gap:calc(var(--size) * 0.2);
+  padding-left:calc(var(--size) * 0.2);
 }
 nav a{
   text-decoration:none;
   color:white;
-  font-size:2rem;
+  font-size:calc(var(--size) * 0.15);
   --background: #130f0f;
   font-family: "Volkhov", serif;
-  font-weight: 400;
+  font-weight: var(--fontweight);
   font-style: normal;
-}
-.main{ 
-  flex-grow:5;
-  background: white;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  display:flex;
-  align-items:center;
 }
 footer{
-  height:2rem;
+  height:calc(var(--size) * 0.1);
   width:100%;
-  background: black;
-  color: #686767;
+  background: rgb(0, 0, 0);
+  color: #676767;
   display: grid;
   place-content:center;
+  bottom:0;
+  left:0;
+  position: fixed;
 }
-div{
+.info{
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height:calc(var(--size) * 2.5);
   width:calc(var(--size) * 3);
-  background: gray;
-  border-radius:1rem;
-  font-size:5rem;
-  font-family: "Science Gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: url(https://images-bonnier.imgix.net/files/ill/production/2021/10/07155652/lava-varmt.jpg?auto=format,compress&crop=focalpoint&fp-x=0.5&fp-y=0.5&ar=1.4435695538057742:1&w=2048&q=80&fit=crop)
+  background: url(Kvadrat-rustik-papper.png);
+  background-size: cover;
+  border-radius:calc(var(--size) * .1);
+  h2{
+    font-size:calc(var(--size) * .3);
+    font-family: "Volkhov", serif;
+    font-weight: var(--fontweight);
+    font-style: normal;
+    margin-top:calc(var(--size)*.2);
+  }
+  p{
+    font-size:calc(var(--size) * .1);
+    font-family: "Volkhov", serif;
+    font-weight: var(--fontweight);
+    font-style: normal;
+    text-align: center;
+    margin-top: calc(var(--size) * .2);
+    margin-left: calc(var(--size) * .2);
+    margin-right: calc(var(--size) * .2);
+  }
 }
+
+/*scrollar åt höger oavsett hur jag gör på touchpaden*//*Varför???*/
 #container{
-  border:2px dotted blue;
+  --outline:2px dotted blue;
   position:relative;
-  top:calc(var(--size) * .2);
-  --left:calc(var(--size) * 0.4);
+  top:calc(var(--size) * .22);
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-left:calc(var(--size) * 0.8);
+  padding-right:calc(var(--size) * 0.8);
   gap:calc(var(--size) * 0.8);
   overflow-x: scroll;
+  padding-bottom:calc(var(--size) * 0.07);
+  margin-bottom:calc(var(--size) * -0.1);
 }
 ::-webkit-scrollbar{
-  display: none;
+  height: 12px;
+  background: #65412f;
+}
+::-webkit-scrollbar-thumb{
+  background: #764c25;
+  border-radius: 6px;
 }

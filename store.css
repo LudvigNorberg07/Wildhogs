@@ -1,0 +1,85 @@
+:root{
+    --size:200px;
+    --fontweight: 200;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --outline:2px dotted orange;
+}
+.metal-mania-regular {
+  font-family: "Metal Mania", system-ui;
+  font-weight: var(--fontweight);
+  font-style: normal;
+}
+body{
+    display:flex;
+    flex-direction:row;
+    height:100dvh;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+::-webkit-scrollbar{
+  height: 12px;
+  background: #65412f;
+}
+::-webkit-scrollbar-thumb{
+  background: #764c25;
+  border-radius: 6px;
+}
+.Frontpage{
+  height:100%;
+  width:100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .9)),
+    url(Kockar_och_biker_2.jpg);
+  background-position: center;
+  display:grid;
+  place-content: center;
+  text-align: center;
+  font-family: "Metal Mania", system-ui;
+  font-weight: var(--fontweight);
+  font-style: normal;
+  font-size:calc(var(--size) * 1); 
+  text-shadow: calc(var(--size)/100) 0 #000, calc(var(--size)/-100) 0 #000, 0 calc(var(--size)/100) #000, 0 calc(var(--size)/-100) #000;
+  color: #fd8317;
+}
+.storepage{
+    height:100%;
+}
+nav{
+    z-index: 10;
+    --outline:2px dotted red;
+    position:fixed;
+    text-align: center;
+    font-size:calc(var(--size) * 0.15);
+    font-family: "Volkhov", serif;
+    font-weight: var(--fontweight);
+    font-style: normal;
+    width:100%;
+}
+nav a{
+    text-decoration:none;
+    color:white;
+    margin:calc(var(--size) * 0.1);
+    text-shadow: calc(var(--size)/100) 0 #000, calc(var(--size)/-100) 0 #000, 0 calc(var(--size)/100) #000, 0 calc(var(--size)/-100) #000;
+}
+#container{
+    height:100dvh;
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr;;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    outline:2px dotted blue;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start; /*Snap funkar ej om musen scrollar långsamt*/ 
+    scroll-behavior: smooth;
+}
+.info{
+    display:flex;
+    flex-direction:column;
+    height:100dvh;
+    width:100dvw;
+}
