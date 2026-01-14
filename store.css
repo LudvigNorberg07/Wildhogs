@@ -45,9 +45,29 @@ body{
   text-shadow: calc(var(--size)/100) 0 #000, calc(var(--size)/-100) 0 #000, 0 calc(var(--size)/100) #000, 0 calc(var(--size)/-100) #000;
   color: #fd8317;
 }
+.info{
+    display:flex;
+    flex-direction:column;
+    height:100dvh;
+    width:100dvw;
+}
 .storepage{
     height:100%;
+    background: 
+    linear-gradient(#00000000,#00000092),
+    url(bakgrundmerch2.jpeg);
+    background-position: center;
+    display: flex;
+    align-items:center;
 }
+.merch{
+    height:calc(var(--size) * 2);
+    width:calc(var(--size) * 1.5);
+    margin:calc(var(--size) * 0.2);
+    background: white;
+    border-radius: calc(var(--size) * 0.05);
+    
+  }
 nav{
     z-index: 10;
     --outline:2px dotted red;
@@ -69,17 +89,23 @@ nav a{
     height:100dvh;
     position:relative;
     display:grid;
-    grid-template-columns: 1fr 1fr;;
+    grid-template-columns: 1fr 1fr;
     overflow-x:scroll;
     overflow-y:hidden;
     outline:2px dotted blue;
-    scroll-snap-type: x mandatory;
-    scroll-snap-align: start; /*Snap funkar ej om musen scrollar långsamt*/ 
-    scroll-behavior: smooth;
+    --scroll-snap-type: x mandatory;
+    --scroll-snap-align: start; /*Snap funkar ej om musen scrollar långsamt*/ 
+    --scroll-behavior: smooth;
 }
-.info{
-    display:flex;
-    flex-direction:column;
-    height:100dvh;
-    width:100dvw;
+.info section{
+    --outline:2px dotted green;
+    flex-grow:1;
+    display:grid;
+    place-content: center;
+    font-family: "Volkhov", serif;
+    font-weight: var(--fontweight);
+    font-style: normal;
+    font-size:calc(var(--size) * 0.2);
+    text-align: center;
+    padding:calc(var(--size) * 0.2);
 }
